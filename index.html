@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Savlon by PurplePatch</title>
+    <meta name="ad.size" content="width=300,height=250">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type="image/x-icon" href="https://purplepatch.online/assets/ico/favicon.ico">
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <link rel='stylesheet' type='text/css' href='test.css?v=1.1'>
+    <script type='text/javascript' src='Tween.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+</head>
+
+<body>
+    <div  class='wrapper'>
+        <div id='adArea' class='rct'>
+            <div class="slide1">
+            <div id='endAnimCont' class='rct'>
+                <div id='bg1' class='scalex05'></div>
+            </div>
+            <div class="text1">  </div>
+            <div  id='over' class='rct'></div>
+            <canvas   id='ctx' width='300px' height='250px' class='scalex05'></canvas>
+            <div class='sanitizer'></div>
+            <!-- <div class='wipemessage'></div> -->
+            <div class='drag scratch'></div>
+            </div>
+            <div class="slide2">
+            <div class='lead_box'>
+                 <div class="text2 hidden">  </div>
+                <div class="text3 hidden">  </div>
+                <div class="cleanhand hidden">  </div>
+                <!-- <div class='flyingBG '><img src='img/packsmall.png' alt=''></div> -->
+            </div>
+            </div>
+            <div class="slide3 hidden">
+                <div class="savlon fadeInUp"></div>
+                <div class="logotext fadeInUp"></div>
+                <div class="share shake"></div>
+            </div>
+        </div>
+    </div>
+    <script src='test.js?v=1.1'></script>
+    <script>
+        var rSrc;
+        var revealImg = new Image();
+        var assets = {
+            init: {
+                url: 'img/',
+            }
+        };
+        var curCount = 0;
+        var countNeed = 2;
+
+        function countLoad() {
+            curCount++;
+            if (curCount == countNeed) {
+                init();
+            }
+        }
+        revealImg.onload = function() {
+            countLoad();
+        };
+        revealImg.src = assets.init.url + 'germs.png';
+        rSrc = assets.init.url + 'handclean.png';
+
+
+        // random image 
+        var images = ['1.png', '2.png', '3.png'];
+        $('.text3').css({'background-image': 'url(img/' + images[Math.floor(Math.random() * images.length)] + ')'});
+
+
+
+    </script>
+</body>
+
+</html>
